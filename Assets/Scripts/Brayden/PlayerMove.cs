@@ -25,11 +25,11 @@ public class PlayerMove : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
         // Move the character left and right
-        float moveInput = Input.GetAxis("Horizontal");
+        float moveInput = PlayerInput.Instance.GetMovementInput();
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
 
         // Jump if the player presses the jump button and the character is grounded
-        if (isGrounded && Input.GetButtonDown("Jump"))
+        if (isGrounded && PlayerInput.Instance.GetJumpInput())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
