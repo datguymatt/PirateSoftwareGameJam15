@@ -20,6 +20,7 @@ public class PlayerInfo : MonoBehaviour
     {
         if (PlayerInput.Instance.GetSwitchInput())
         {
+            Actions.OnPlayerModeChange?.Invoke();
             IsInShadowMode = !IsInShadowMode;
         }
     }

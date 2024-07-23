@@ -25,6 +25,18 @@ public class CameraMovement : MonoBehaviour
     float zStart;
     float cameraSizeStart;
     float cameraSizeNew;
+    bool isInShadowMode;
+    bool doneLerping;
+
+    private void OnEnable()
+    {
+        Actions.OnPlayerModeChange += OnPlayerModeChange;
+    }
+
+    private void OnDisable()
+    {
+        Actions.OnPlayerModeChange -= OnPlayerModeChange;
+    }
 
     void Start()
     {
@@ -38,10 +50,21 @@ public class CameraMovement : MonoBehaviour
         zStart = transform.position.z;
     }
 
+    void OnPlayerModeChange()
+    {
+        isInShadowMode = !isInShadowMode;
+        if (doneLerping)
+        {
+            doneLerping = false;
+        }
+    }
+
     void Update()
     {
+        Debug.Log(isInShadowMode);
+        Debug.Log("done lerping: " + doneLerping);
         // If not in shadow mode
-        if (!PlayerInfo.Instance.IsInShadowMode)
+        if (!isInShadowMode)
         {
             // LERP the camera size to the start size
             if (cameraSizeStart - m_camera.orthographicSize > stopSwitchLerpDist)
@@ -52,15 +75,18 @@ public class CameraMovement : MonoBehaviour
             {
                 m_camera.orthographicSize = cameraSizeStart;
             }
-
+            Debug.Log(Vector2.Distance(playerSprite.transform.position, new Vector2(transform.position.x, playerSprite.transform.position.y)));
             // LERP the camera x pos to the player, keep y and z at the start pos
-            if (playerTransform.position.x - transform.position.x > stopSwitchLerpDist)
+            if (Vector2.Distance(playerSprite.transform.position, new Vector2(transform.position.x, playerSprite.transform.position.y)) > stopSwitchLerpDist && !doneLerping)
             {
-                transform.position = new Vector3(Mathf.Lerp(transform.position.x, playerTransform.position.x, Time.deltaTime * switchSpeed), yStart, zStart);
+                transform.position = new Vector3(Mathf.Lerp(transform.position.x, playerSprite.transform.position.x, Time.deltaTime * switchSpeed), yStart, zStart);
+                //Debug.Log("lerping " + Vector2.Distance(playerSprite.transform.position, transform.position));
             }
             else
             {
-                transform.position = new Vector3(playerTransform.position.x, yStart, zStart);
+                //Debug.Log("not");
+                transform.position = new Vector3(playerSprite.transform.position.x, yStart, zStart);
+                doneLerping = true;
             }
             
             // Set the player sprite to active
@@ -78,18 +104,18 @@ public class CameraMovement : MonoBehaviour
                 m_camera.orthographicSize = cameraSizeNew;
             }
 
-            
-
             // LERP camera x pos to shadow, offset y pos down for camera size change, keep z at start
-            if (transform.position.x - shadowSprite.transform.position.x > stopSwitchLerpDist && transform.position.y - (yStart - m_camera.orthographicSize) > stopSwitchLerpDist)
+            // new Vector2(shadowSprite.transform.position.x, yStart - m_camera.orthographicSize)
+            if (Vector2.Distance(new Vector2(transform.position.x, shadowSprite.transform.position.y), shadowSprite.transform.position) > stopSwitchLerpDist && !doneLerping)
             {
                 transform.position = new Vector3(Mathf.Lerp(transform.position.x, shadowSprite.transform.position.x, Time.deltaTime * switchSpeed), Mathf.Lerp(transform.position.y, yStart - m_camera.orthographicSize, Time.deltaTime * switchSpeed * ySwitchSpeedMultiplier), zStart);
             }
             else
             {
                 transform.position = new Vector3(shadowSprite.transform.position.x, yStart - m_camera.orthographicSize, zStart);
+                doneLerping = true;
             }
-
+            Debug.Log(Vector2.Distance(new Vector2(transform.position.x, shadowSprite.transform.position.y), new Vector2(shadowSprite.transform.position.x, yStart - m_camera.orthographicSize)));
             // Set the player sprite to inactive
             playerSprite.SetActive(false);
         }
