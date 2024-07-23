@@ -7,9 +7,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Music")]
     //channels
-    public AudioSource musicNight;
-    public AudioSource musicDusk;
-    public AudioSource musicDay;
+    public AudioSource music;
 
     [SerializeField] private AudioClip[] musicClips;
 
@@ -123,13 +121,7 @@ public class AudioManager : MonoBehaviour
         {
             if (clipFound.name == clip)
             {
-                if (musicNight.isPlaying)
-                {
-                    musicDusk.clip = clipFound;
-                } else if (musicDusk.isPlaying)
-                {
-                    musicNight.clip = clipFound;
-                }
+                music.clip = clipFound;
             }
         }
         else
