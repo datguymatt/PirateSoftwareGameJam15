@@ -61,8 +61,6 @@ public class CameraMovement : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(isInShadowMode);
-        Debug.Log("done lerping: " + doneLerping);
         // If not in shadow mode
         if (!isInShadowMode)
         {
@@ -75,7 +73,6 @@ public class CameraMovement : MonoBehaviour
             {
                 m_camera.orthographicSize = cameraSizeStart;
             }
-            Debug.Log(Vector2.Distance(playerSprite.transform.position, new Vector2(transform.position.x, playerSprite.transform.position.y)));
             // LERP the camera x pos to the player, keep y and z at the start pos
             if (Vector2.Distance(playerSprite.transform.position, new Vector2(transform.position.x, playerSprite.transform.position.y)) > stopSwitchLerpDist && !doneLerping)
             {
@@ -105,7 +102,6 @@ public class CameraMovement : MonoBehaviour
             }
 
             // LERP camera x pos to shadow, offset y pos down for camera size change, keep z at start
-            // new Vector2(shadowSprite.transform.position.x, yStart - m_camera.orthographicSize)
             if (Vector2.Distance(new Vector2(transform.position.x, shadowSprite.transform.position.y), shadowSprite.transform.position) > stopSwitchLerpDist && !doneLerping)
             {
                 transform.position = new Vector3(Mathf.Lerp(transform.position.x, shadowSprite.transform.position.x, Time.deltaTime * switchSpeed), Mathf.Lerp(transform.position.y, yStart - m_camera.orthographicSize, Time.deltaTime * switchSpeed * ySwitchSpeedMultiplier), zStart);
@@ -115,7 +111,6 @@ public class CameraMovement : MonoBehaviour
                 transform.position = new Vector3(shadowSprite.transform.position.x, yStart - m_camera.orthographicSize, zStart);
                 doneLerping = true;
             }
-            Debug.Log(Vector2.Distance(new Vector2(transform.position.x, shadowSprite.transform.position.y), new Vector2(shadowSprite.transform.position.x, yStart - m_camera.orthographicSize)));
             // Set the player sprite to inactive
             playerSprite.SetActive(false);
         }

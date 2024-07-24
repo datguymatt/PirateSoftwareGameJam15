@@ -6,4 +6,8 @@ using System;
 public class Actions
 {
     public static Action OnPlayerModeChange;
+
+    public static Action<int> OnPlayerAttacked;
+
+    public static Action OnPlayerDied;
 }
