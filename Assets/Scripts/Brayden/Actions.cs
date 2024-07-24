@@ -10,4 +10,6 @@ public class Actions
     public static Action<int> OnPlayerAttacked;
 
     public static Action OnPlayerDied;
+
+    public static Action OnPlayerSpawned;
 }
