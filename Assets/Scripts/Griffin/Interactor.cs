@@ -11,6 +11,15 @@ public class Interactor : MonoBehaviour
         {
             currentInteractable = collision.gameObject.GetComponent<IInteractable>();
         }
+        else if (collision.gameObject.CompareTag("CheckPoint"))
+        {
+            collision.gameObject.GetComponent<Checkpoint>().SetCheckpoint();
+        }
+        else if (collision.gameObject.CompareTag("Respawn"))
+        {
+            Actions.OnPlayerDied?.Invoke();
+            GameManager.Instance.RespawnAtCheckpoint(gameObject);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
