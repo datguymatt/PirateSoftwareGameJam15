@@ -17,6 +17,11 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        allowInput = true;
+    }
+
     private void OnEnable()
     {
         Actions.OnPlayerDied += OnPlayerDied;

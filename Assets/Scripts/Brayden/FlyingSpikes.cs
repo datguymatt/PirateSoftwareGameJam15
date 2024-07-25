@@ -14,7 +14,7 @@ public class FlyingSpikes : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.layer == 6) // layer 6 is Player
         {
             Actions.OnPlayerAttacked?.Invoke(damage);
             Destroy(gameObject);
