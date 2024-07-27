@@ -18,8 +18,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Ambience")]
     //Ambience
-    public AudioSource dayAmbience;
-    public AudioSource nightAmbience;
+    public AudioSource ambience;
     //search
     AudioClip searchResult;
 
