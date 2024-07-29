@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 9e7d0de76ba97d94db4666b48f1ae384
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Fallow Free
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d4e5d7f43b5750a48b2f57403f21b2d0, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
