@@ -7880,9 +7880,9 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!4 &880811813 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2661475547436506081, guid: f3d8b9a96751213499224cf99f9b3439,
+  m_CorrespondingSourceObject: {fileID: 7659433753671271339, guid: f3d8b9a96751213499224cf99f9b3439,
     type: 3}
-  m_PrefabInstance: {fileID: 2661475548183086276}
+  m_PrefabInstance: {fileID: 7659433753344121998}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &899239612
 GameObject:
@@ -13312,242 +13312,88 @@ MonoBehaviour:
             m_StringArgument: button-click
             m_BoolArgument: 0
           m_CallState: 2
---- !u!1001 &2661475548183086276
+--- !u!82 &2661475548183086278 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5666851602659661896, guid: f3d8b9a96751213499224cf99f9b3439,
+    type: 3}
+  m_PrefabInstance: {fileID: 7659433753344121998}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7659433753344121998
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 1659061980}
     m_Modifications:
-    - target: {fileID: 2661475546590006061, guid: f3d8b9a96751213499224cf99f9b3439,
+    - target: {fileID: 7659433752921314151, guid: f3d8b9a96751213499224cf99f9b3439,
         type: 3}
-      propertyPath: theInputText
-      value: was that your shadow that was missing? was it there all along? peace
-        is living with both as one but you need both in order to press on
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475546590006061, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: theInputTextLineOne
-      value: was that your shadow that was missing?
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475546590006061, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: theInputTextLineTwo
+      propertyPath: textAudioSource
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475546590006061, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: theInputTextLineFour
-      value: but you need both in order to press on
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475546590006061, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: theInputTextLineThree
-      value: peace is living with both as one
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475546590006062, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: ada755a2b27a2d84caaf575f222215a6,
-        type: 2}
-    - target: {fileID: 2661475546590006062, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -4725690398752111426, guid: ada755a2b27a2d84caaf575f222215a6,
-        type: 2}
-    - target: {fileID: 2661475547436506080, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: m_Name
-      value: TextCharRenderSystem
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475547436506081, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475547436506081, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -681.4375
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475547436506081, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -522.1423
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475547436506081, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.100733
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475547436506081, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475547436506081, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475547436506081, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475547436506081, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475547436506081, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475547436506081, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475547436506081, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475547436506082, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: vibrato
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475547436506082, guid: f3d8b9a96751213499224cf99f9b3439,
-        type: 3}
-      propertyPath: strength
-      value: 1.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 2661475547436506082, guid: f3d8b9a96751213499224cf99f9b3439,
+      objectReference: {fileID: 2661475548183086278}
+    - target: {fileID: 7659433753671271336, guid: f3d8b9a96751213499224cf99f9b3439,
         type: 3}
       propertyPath: hasTension
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2661475547436506082, guid: f3d8b9a96751213499224cf99f9b3439,
+    - target: {fileID: 7659433753671271338, guid: f3d8b9a96751213499224cf99f9b3439,
         type: 3}
-      propertyPath: shakeDuration
-      value: 0.14
+      propertyPath: m_Name
+      value: TextCharRenderSystem
       objectReference: {fileID: 0}
-    - target: {fileID: 2661475547436506082, guid: f3d8b9a96751213499224cf99f9b3439,
+    - target: {fileID: 7659433753671271339, guid: f3d8b9a96751213499224cf99f9b3439,
         type: 3}
-      propertyPath: normalShakeDuration
-      value: 2.56
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2661475547436506082, guid: f3d8b9a96751213499224cf99f9b3439,
+    - target: {fileID: 7659433753671271339, guid: f3d8b9a96751213499224cf99f9b3439,
         type: 3}
-      propertyPath: tensionShakeDuration
-      value: 0.2
+      propertyPath: m_LocalPosition.x
+      value: -681.4375
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659433753671271339, guid: f3d8b9a96751213499224cf99f9b3439,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -522.1423
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659433753671271339, guid: f3d8b9a96751213499224cf99f9b3439,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.100733
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659433753671271339, guid: f3d8b9a96751213499224cf99f9b3439,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659433753671271339, guid: f3d8b9a96751213499224cf99f9b3439,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659433753671271339, guid: f3d8b9a96751213499224cf99f9b3439,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659433753671271339, guid: f3d8b9a96751213499224cf99f9b3439,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659433753671271339, guid: f3d8b9a96751213499224cf99f9b3439,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659433753671271339, guid: f3d8b9a96751213499224cf99f9b3439,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659433753671271339, guid: f3d8b9a96751213499224cf99f9b3439,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3d8b9a96751213499224cf99f9b3439, type: 3}
---- !u!1 &2661475548183086277 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2661475547436506080, guid: f3d8b9a96751213499224cf99f9b3439,
-    type: 3}
-  m_PrefabInstance: {fileID: 2661475548183086276}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &2661475548183086278
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2661475548183086277}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
