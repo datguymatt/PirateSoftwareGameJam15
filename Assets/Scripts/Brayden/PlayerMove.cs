@@ -34,7 +34,7 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("walking");
             sFXPlayerController.StartWalking();
         }
-        else if (moveInput == 0f && isGrounded)
+        else if (moveInput == 0f || !isGrounded)
         {
             Debug.Log("stopped walking");
             sFXPlayerController.StopWalking();

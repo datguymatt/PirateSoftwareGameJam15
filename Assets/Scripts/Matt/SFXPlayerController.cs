@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class SFXPlayerController : MonoBehaviour
 {
@@ -44,7 +45,7 @@ public class SFXPlayerController : MonoBehaviour
 
     public void StartWalking()
     {
-        if (!isWalking)
+        if (!audioChannel.isPlaying && !isWalking)
         {
             isWalking = true;
             StartCoroutine(WalkSFXPlay());
@@ -53,7 +54,8 @@ public class SFXPlayerController : MonoBehaviour
 
     public void StopWalking()
     {
-        isWalking=false;
+        audioChannel.Stop();
+        isWalking = false;
         StopCoroutine(WalkSFXPlay());
 
     }
@@ -76,12 +78,23 @@ public class SFXPlayerController : MonoBehaviour
                 audioChannel.PlayOneShot(RandomSelect("leftFoot"));
                 yield return new WaitForSeconds(stepLength);
             }
+            else
+            {
+                audioChannel.Stop();
+            }
 
-            if(isWalking)
+            if (isWalking)
             {
                 audioChannel.PlayOneShot(RandomSelect("rightFoot"));
                 yield return new WaitForSeconds(stepLength);
             }
+            else
+            {
+                audioChannel.Stop();
+            }
         }
+        audioChannel.DOFade(0, 0.2f);
+
+        yield return null;
     }
 }
