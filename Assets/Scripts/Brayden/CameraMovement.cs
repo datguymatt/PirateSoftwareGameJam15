@@ -8,7 +8,8 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] Transform playerTransform;
     [SerializeField] GameObject shadowSprite;
     [SerializeField] GameObject playerSprite;
-    
+    [SerializeField] Animator playerAnimator;
+
     // how fast the camera lerps when switching
     [SerializeField] float switchSpeed;
 
@@ -86,7 +87,12 @@ public class CameraMovement : MonoBehaviour
                 transform.position = new Vector3(playerSprite.transform.position.x, yStart, zStart);
                 doneLerping = true;
             }
-            
+            // Play switch fx
+            if (PlayerInput.Instance.GetSwitchInput())
+            {
+                playerAnimator.Play("Base Layer.SwitchEffectReversed");
+            }
+
             // Set the player sprite to active
             playerSprite.SetActive(true);
             if (disableShadowSprite)
@@ -116,10 +122,16 @@ public class CameraMovement : MonoBehaviour
                 transform.position = new Vector3(shadowSprite.transform.position.x, yStart - m_camera.orthographicSize, zStart);
                 doneLerping = true;
             }
+            // Play switch fx
+            if (PlayerInput.Instance.GetSwitchInput())
+            {
+                playerAnimator.Play("Base Layer.SwitchEffect");
+            }
+
             // Set the player sprite to inactive
             playerSprite.SetActive(false);
             shadowSprite.SetActive(true);
         }
-        
+
     }
 }
