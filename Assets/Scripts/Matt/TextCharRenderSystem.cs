@@ -22,15 +22,25 @@ public class TextCharRenderSystem : MonoBehaviour
     public TextMeshProUGUI textMeshProUGUI;
 
     public AudioSource textAudioSource;
+    public float fadeAudioTime = 0.5f;
+
+    //events
+    private MenuManager menuManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartTextRender();
+        menuManager = FindObjectOfType<MenuManager>();
+        //subscribe to events
+        menuManager.StartGameClicked += StartGameClicked;
     }
 
-    public void StartTextRender()
+    public void StartGameClicked()
     {
+        textAudioSource.Play();
+        textAudioSource.volume = 0f;
+        //fade in audio
+        textAudioSource.DOFade(1, fadeAudioTime);
         //parse the input text into individual chars, save into the char array
         characterArray = theInputTextLineOne.ToCharArray();
         //start the coRout
@@ -45,6 +55,8 @@ public class TextCharRenderSystem : MonoBehaviour
             textMeshProUGUI.text += characterArray[i];
             yield return new WaitForSeconds(charRenderTime);
         }
+        //fade out audio
+        textAudioSource.DOFade(0, fadeAudioTime);
         textAudioSource.Stop();
     }
 }

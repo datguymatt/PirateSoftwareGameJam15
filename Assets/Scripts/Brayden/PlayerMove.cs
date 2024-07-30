@@ -17,6 +17,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask groundLayer;
 
+    private SFXPlayerController sFXPlayerController;
+
     Rigidbody2D rb;
     bool isGrounded;
     float timer;
@@ -25,6 +27,7 @@ public class PlayerMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = gravityScale;
+        sFXPlayerController = GetComponent<SFXPlayerController>();
     }
 
     private void OnEnable()
@@ -49,6 +52,7 @@ public class PlayerMove : MonoBehaviour
             maxSpeed /= shadowSpeedMultiplier;
             acceleration /= shadowSpeedMultiplier;
         }
+        
     }
 
     // Update is called once per frame
@@ -61,6 +65,17 @@ public class PlayerMove : MonoBehaviour
 
         // Get movement input
         float moveInput = PlayerInput.Instance.GetMovementInput();
+        if (moveInput != 0f && isGrounded)
+        {
+            Debug.Log("walking");
+            sFXPlayerController.StartWalking();
+        }
+        else if (moveInput == 0f || !isGrounded)
+        {
+            Debug.Log("stopped walking");
+            sFXPlayerController.StopWalking();
+        }
+        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
 
         // Calculate force for horizontal movement
         Vector2 force = new Vector2(moveInput * acceleration, 0) * Time.deltaTime;

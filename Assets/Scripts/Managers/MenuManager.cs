@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +12,9 @@ public class MenuManager : MonoBehaviour
 
     //audio manager
     public AudioManager audioManager;
+
+    //music
+    public AudioSource musicSource;
 
     //UI
     public TextMeshProUGUI statusMessage;
@@ -29,6 +34,8 @@ public class MenuManager : MonoBehaviour
     public Action AnyButtonPrompt;
     public Action AnyButtonClicked;
     public Action StartGameClicked;
+
+   
 
 
 
@@ -86,6 +93,8 @@ public class MenuManager : MonoBehaviour
         //queue subscribers to event
         StartGameClicked?.Invoke();
     }
+
+    
 
     public void LoadGame()
     {
