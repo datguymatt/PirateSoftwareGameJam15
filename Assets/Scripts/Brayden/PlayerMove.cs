@@ -10,12 +10,15 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask groundLayer;
 
+    private SFXPlayerController sFXPlayerController;
+
     Rigidbody2D rb;
     bool isGrounded;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sFXPlayerController = GetComponent<SFXPlayerController>();
     }
 
     // Update is called once per frame
@@ -26,6 +29,16 @@ public class PlayerMove : MonoBehaviour
 
         // Move the character left and right
         float moveInput = PlayerInput.Instance.GetMovementInput();
+        if (moveInput != 0f && isGrounded)
+        {
+            Debug.Log("walking");
+            sFXPlayerController.StartWalking();
+        }
+        else if (moveInput == 0f && isGrounded)
+        {
+            Debug.Log("stopped walking");
+            sFXPlayerController.StopWalking();
+        }
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
 
         // Jump if the player presses the jump button and the character is grounded
