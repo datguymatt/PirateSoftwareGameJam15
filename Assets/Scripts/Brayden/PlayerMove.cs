@@ -75,7 +75,6 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("stopped walking");
             sFXPlayerController.StopWalking();
         }
-        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
 
         // Calculate force for horizontal movement
         Vector2 force = new Vector2(moveInput * acceleration, 0) * Time.deltaTime;
