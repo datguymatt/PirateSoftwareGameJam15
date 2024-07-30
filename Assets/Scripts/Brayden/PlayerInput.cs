@@ -54,6 +54,16 @@ public class PlayerInput : MonoBehaviour
         return allowInput ? Input.GetButtonDown("Jump") : false;
     }
 
+    public bool GetFloatInputInitial()
+    {
+        return allowInput ? Input.GetKeyDown(KeyCode.F) : false;
+    }
+
+    public bool GetFloatInputHeld()
+    {
+        return allowInput ? Input.GetKey(KeyCode.F) : false;
+    }
+
     public bool GetSwitchInput()
     {
         return allowInput ? Input.GetKeyDown(KeyCode.S) : false;

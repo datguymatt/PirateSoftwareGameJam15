@@ -28,6 +28,7 @@ public class CameraMovement : MonoBehaviour
     float cameraSizeNew;
     bool isInShadowMode;
     bool doneLerping;
+    [SerializeField] bool disableShadowSprite;
 
     private void OnEnable()
     {
@@ -94,6 +95,10 @@ public class CameraMovement : MonoBehaviour
 
             // Set the player sprite to active
             playerSprite.SetActive(true);
+            if (disableShadowSprite)
+            {
+                shadowSprite.SetActive(false);
+            }
         }
         else
         {
@@ -125,6 +130,7 @@ public class CameraMovement : MonoBehaviour
 
             // Set the player sprite to inactive
             playerSprite.SetActive(false);
+            shadowSprite.SetActive(true);
         }
 
     }

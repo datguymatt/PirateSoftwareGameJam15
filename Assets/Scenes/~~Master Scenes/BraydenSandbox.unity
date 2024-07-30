@@ -7192,6 +7192,7 @@ MonoBehaviour:
   ySwitchSpeedMultiplier: 0.62
   cameraSizeReductionFactor: 0.5
   stopSwitchLerpDist: 0.008
+  disableShadowSprite: 0
 --- !u!1 &1624513289
 GameObject:
   m_ObjectHideFlags: 0
@@ -9004,8 +9005,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24376c0ccdfb59d43a35c829e998f091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  maxSpeed: 3
+  acceleration: 10
+  shadowSpeedMultiplier: 0.8
   jumpForce: 5
+  jumpSideForce: 1
+  timeBeforeFloating: 0.15
+  totalFloatTime: 1.3
+  gravityScale: 1.5
+  floatGravityScale: 1.5
   groundCheckRadius: 0.2
   groundCheck: {fileID: 260582926}
   groundLayer:
