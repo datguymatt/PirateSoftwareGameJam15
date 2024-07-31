@@ -22,12 +22,16 @@ public class CameraMovement : MonoBehaviour
     // stop lerp if within this distance
     [SerializeField] float stopSwitchLerpDist;
 
+    [HideInInspector] public float yOffset;
+    public float shadowYOffset;
+
     float yStart;
     float zStart;
     float cameraSizeStart;
     float cameraSizeNew;
     bool isInShadowMode;
     bool doneLerping;
+    [SerializeField] bool disableShadowSprite;
 
     private void OnEnable()
     {
@@ -49,6 +53,7 @@ public class CameraMovement : MonoBehaviour
 
         yStart = transform.position.y;
         zStart = transform.position.z;
+        yOffset = 0f;
     }
 
     void OnPlayerModeChange()
@@ -77,13 +82,13 @@ public class CameraMovement : MonoBehaviour
             // LERP the camera x pos to the player, keep y and z at the start pos
             if (Vector2.Distance(playerSprite.transform.position, new Vector2(transform.position.x, playerSprite.transform.position.y)) > stopSwitchLerpDist && !doneLerping)
             {
-                transform.position = new Vector3(Mathf.Lerp(transform.position.x, playerSprite.transform.position.x, Time.deltaTime * switchSpeed), yStart, zStart);
+                transform.position = new Vector3(Mathf.Lerp(transform.position.x, playerSprite.transform.position.x, Time.deltaTime * switchSpeed), yStart + yOffset, zStart);
                 //Debug.Log("lerping " + Vector2.Distance(playerSprite.transform.position, transform.position));
             }
             else
             {
                 //Debug.Log("not");
-                transform.position = new Vector3(playerSprite.transform.position.x, yStart, zStart);
+                transform.position = new Vector3(playerSprite.transform.position.x, yStart + yOffset, zStart);
                 doneLerping = true;
             }
             // Play switch fx
@@ -94,6 +99,10 @@ public class CameraMovement : MonoBehaviour
 
             // Set the player sprite to active
             playerSprite.SetActive(true);
+            if (disableShadowSprite)
+            {
+                shadowSprite.SetActive(false);
+            }
         }
         else
         {
@@ -110,11 +119,11 @@ public class CameraMovement : MonoBehaviour
             // LERP camera x pos to shadow, offset y pos down for camera size change, keep z at start
             if (Vector2.Distance(new Vector2(transform.position.x, shadowSprite.transform.position.y), shadowSprite.transform.position) > stopSwitchLerpDist && !doneLerping)
             {
-                transform.position = new Vector3(Mathf.Lerp(transform.position.x, shadowSprite.transform.position.x, Time.deltaTime * switchSpeed), Mathf.Lerp(transform.position.y, yStart - m_camera.orthographicSize, Time.deltaTime * switchSpeed * ySwitchSpeedMultiplier), zStart);
+                transform.position = new Vector3(Mathf.Lerp(transform.position.x, shadowSprite.transform.position.x, Time.deltaTime * switchSpeed), Mathf.Lerp(transform.position.y, yStart - m_camera.orthographicSize + shadowYOffset, Time.deltaTime * switchSpeed * ySwitchSpeedMultiplier), zStart);
             }
             else
             {
-                transform.position = new Vector3(shadowSprite.transform.position.x, yStart - m_camera.orthographicSize, zStart);
+                transform.position = new Vector3(shadowSprite.transform.position.x, yStart - m_camera.orthographicSize + shadowYOffset, zStart);
                 doneLerping = true;
             }
             // Play switch fx
@@ -125,6 +134,7 @@ public class CameraMovement : MonoBehaviour
 
             // Set the player sprite to inactive
             playerSprite.SetActive(false);
+            shadowSprite.SetActive(true);
         }
 
     }
