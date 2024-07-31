@@ -4931,6 +4931,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
+  flickering: 0
+  onTime: 0
+  offTime: 0
 --- !u!50 &940375537
 Rigidbody2D:
   serializedVersion: 4
@@ -7188,10 +7191,13 @@ MonoBehaviour:
   playerTransform: {fileID: 1944357395}
   shadowSprite: {fileID: 1696825231}
   playerSprite: {fileID: 708732914}
+  playerAnimator: {fileID: 0}
   switchSpeed: 6
   ySwitchSpeedMultiplier: 0.62
   cameraSizeReductionFactor: 0.5
   stopSwitchLerpDist: 0.008
+  yOffset: 0
+  shadowYOffset: 0
   disableShadowSprite: 0
 --- !u!1 &1624513289
 GameObject:
@@ -9134,7 +9140,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 70e721bea94d7514291991a9bce876b0, type: 3}
   - {fileID: 8300000, guid: 88f200429d6cb564db11b35dd4b724eb, type: 3}
   - {fileID: 8300000, guid: cad861f64c0a706468c9bf3324392fe4, type: 3}
-  jumpClips: []
+  jumpClips:
+  - {fileID: 8300000, guid: 25f6cc690be99c743b613765d948dd7b, type: 3}
+  - {fileID: 8300000, guid: f3f700ba81eeace45b22fd425deb1cf6, type: 3}
+  - {fileID: 8300000, guid: e3539741423b8ce4bafef8f9b5fce829, type: 3}
+  - {fileID: 8300000, guid: 7276cda038e36864194db83603153bde, type: 3}
+  - {fileID: 8300000, guid: a65c13e923fa1134c97e48ee0d3e3fa5, type: 3}
+  - {fileID: 8300000, guid: ca8f51195525cb64b88aee6daa036d67, type: 3}
+  - {fileID: 8300000, guid: 925d914bd46493741b804d04c17295b1, type: 3}
+  - {fileID: 8300000, guid: 699420ca9a04b4d4ebe8cda69d89c0e8, type: 3}
   landClips: []
   stepLength: 0.48
 --- !u!82 &1944357401
