@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -27,7 +25,7 @@ public class PlayerMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = gravityScale;
-        sFXPlayerController = GetComponent<SFXPlayerController>();
+        //sFXPlayerController = GetComponent<SFXPlayerController>();
     }
 
     private void OnEnable()
@@ -52,32 +50,33 @@ public class PlayerMove : MonoBehaviour
             maxSpeed /= shadowSpeedMultiplier;
             acceleration /= shadowSpeedMultiplier;
         }
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
 
         // Check if the character is grounded
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
         // Get movement input
         float moveInput = PlayerInput.Instance.GetMovementInput();
-        //if (moveInput != 0f && isGrounded)
-        //{
-        //    Debug.Log("walking");
-        //    sFXPlayerController.StartWalking();
-        //}
-        //else if (moveInput == 0f || !isGrounded)
-        //{
-        //    Debug.Log("stopped walking");
-        //    sFXPlayerController.StopWalking();
-        //}
+        if (moveInput != 0f && isGrounded)
+        {
+            Debug.Log("walking");
+            //sFXPlayerController.StartWalking();
+        }
+        else if (moveInput == 0f || !isGrounded)
+        {
+            Debug.Log("stopped walking");
+            //sFXPlayerController.StopWalking();
+        }
 
         // Calculate force for horizontal movement
         Vector2 force = new Vector2(moveInput * acceleration, 0) * Time.deltaTime;
+        Debug.Log($"{force}");
 
         // Apply force for horizontal movement in FixedUpdate
         if (Mathf.Abs(rb.velocity.x) < maxSpeed)
@@ -126,7 +125,7 @@ public class PlayerMove : MonoBehaviour
             rb.gravityScale = gravityScale;
         }
 
-        if (PlayerInfo.Instance.IsInShadowMode && !isGrounded) 
+        if (PlayerInfo.Instance.IsInShadowMode && !isGrounded)
         {
             if (PlayerInput.Instance.GetFloatInputInitial())
             {
@@ -136,11 +135,11 @@ public class PlayerMove : MonoBehaviour
 
             if (PlayerInput.Instance.GetFloatInputHeld() && timer > 0f && timer <= (totalFloatTime - timeBeforeFloating))
             {
-                
+
                 rb.gravityScale = floatGravityScale;
                 rb.velocity = new Vector2(rb.velocity.x, 0f);
             }
-            
+
         }
     }
 }
