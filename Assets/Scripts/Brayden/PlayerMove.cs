@@ -65,16 +65,16 @@ public class PlayerMove : MonoBehaviour
 
         // Get movement input
         float moveInput = PlayerInput.Instance.GetMovementInput();
-        if (moveInput != 0f && isGrounded)
-        {
-            Debug.Log("walking");
-            sFXPlayerController.StartWalking();
-        }
-        else if (moveInput == 0f || !isGrounded)
-        {
-            Debug.Log("stopped walking");
-            sFXPlayerController.StopWalking();
-        }
+        //if (moveInput != 0f && isGrounded)
+        //{
+        //    Debug.Log("walking");
+        //    sFXPlayerController.StartWalking();
+        //}
+        //else if (moveInput == 0f || !isGrounded)
+        //{
+        //    Debug.Log("stopped walking");
+        //    sFXPlayerController.StopWalking();
+        //}
 
         // Calculate force for horizontal movement
         Vector2 force = new Vector2(moveInput * acceleration, 0) * Time.deltaTime;
