@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731926, g: 0.13414907, b: 0.12107833, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731881, g: 0.13414887, b: 0.121078365, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -744,8 +744,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22291161}
   m_Enabled: 1
-  m_SortingLayerID: -814081671
-  m_SortingLayer: 0
+  m_SortingLayerID: 170119733
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!4 &22291163
 Transform:
@@ -3348,7 +3348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135176484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: -0.633}
+  m_LocalPosition: {x: -0, y: 0, z: -1.147}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10770,7 +10770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468281129}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.94, y: -0.39, z: -1.11}
+  m_LocalPosition: {x: 21.94, y: 1.09, z: -1.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10809,7 +10809,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 303.5
+  m_Intensity: 195.98
   m_Range: 17.6
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -12442,8 +12442,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551355873}
   m_Enabled: 1
-  m_SortingLayerID: 1963498467
-  m_SortingLayer: 0
+  m_SortingLayerID: -1943261159
+  m_SortingLayer: 3
   m_SortingOrder: 0
 --- !u!4 &551355875
 Transform:
@@ -16607,8 +16607,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814924544}
   m_Enabled: 1
-  m_SortingLayerID: 617161069
-  m_SortingLayer: 0
+  m_SortingLayerID: 1629918421
+  m_SortingLayer: 6
   m_SortingOrder: 0
 --- !u!4 &814924546
 Transform:
@@ -23436,8 +23436,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117738850}
   m_Enabled: 1
-  m_SortingLayerID: 556029719
-  m_SortingLayer: 0
+  m_SortingLayerID: 617814927
+  m_SortingLayer: 4
   m_SortingOrder: 0
 --- !u!4 &1117738852
 Transform:
@@ -29648,7 +29648,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388421245}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 85.93, y: -1.2, z: -10}
+  m_LocalPosition: {x: -7.096, y: -1.2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -34280,8 +34280,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660811010}
   m_Enabled: 1
-  m_SortingLayerID: 1222858231
-  m_SortingLayer: 0
+  m_SortingLayerID: 713384465
+  m_SortingLayer: 5
   m_SortingOrder: 0
 --- !u!4 &1660811012
 Transform:
@@ -37770,8 +37770,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838808645}
   m_Enabled: 1
-  m_SortingLayerID: -681575301
-  m_SortingLayer: 0
+  m_SortingLayerID: 286930147
+  m_SortingLayer: 2
   m_SortingOrder: 0
 --- !u!4 &1838808647
 Transform:
@@ -38658,7 +38658,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870386015}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.67, y: -1.8, z: -1.44}
+  m_LocalPosition: {x: 4.67, y: 1.26, z: -1.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38697,7 +38697,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 369.7
+  m_Intensity: 183.3
   m_Range: 16.7
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -38947,8 +38947,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893932236}
   m_Enabled: 1
-  m_SortingLayerID: 1343090913
-  m_SortingLayer: 0
+  m_SortingLayerID: 1515770481
+  m_SortingLayer: 7
   m_SortingOrder: 0
 --- !u!4 &1893932238
 Transform:
@@ -46141,6 +46141,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 924431205}
     m_Modifications:
+    - target: {fileID: 924847472412579600, guid: 1a4c20df293fef04d914f4d70472a216,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 924847472412579606, guid: 1a4c20df293fef04d914f4d70472a216,
         type: 3}
       propertyPath: m_Name
